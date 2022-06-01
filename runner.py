@@ -21,7 +21,7 @@ def main():
         board = result(board, user_move)
         check_terminal(board)
 
-        ai_move = minimax(copy.deepcopy(board), 3)
+        ai_move = minimax(copy.deepcopy(board), 4)
         board = result(board, ai_move)
         check_terminal(board)
         print("Evaltion of position: " + str(utility(board)))

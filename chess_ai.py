@@ -68,7 +68,6 @@ def utility(board: chess.Board) -> int:
             return -100000
         else:
             # stalemate
-            # raise NotImplementedError
             return 0
     # count pieces
     white_value = 0
@@ -91,15 +90,16 @@ def minimax(board: chess.Board, max_depth: int) -> chess.Move:
     """
     if terminal(board):
         return None
-    move = ()
     aiSymbol = player(board)
+    # set to opposite of desired goal so that it can achieve something
     if aiSymbol is chess.WHITE:
         best = float('-inf')
     elif aiSymbol is chess.BLACK:
         best = float('inf')
     else:
         raise Exception
-    
+
+    move = ()
     moveValue = 0
     alpha = float('-inf')
     beta = float('inf')
